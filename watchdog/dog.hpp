@@ -10,9 +10,9 @@ namespace watchdog {
     template<level Level = level::info, class Source = std::ostream>
     class dog{
     public:
-        std::ostream mouse;
+        std::ostream& mouse;
 
-        dog(Source const& src = std::cerr)
+        dog(Source &src = std::cerr)
             : mouse(src) {}
 
         template<class... Args>
