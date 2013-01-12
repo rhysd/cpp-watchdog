@@ -8,4 +8,5 @@ namespace watchdog {
         error
     };
 } // namespace watchdog
+
 #endif    // WATCHDOG_LEVEL_HPP_INCLUDED
