@@ -17,7 +17,7 @@ int main()
 {
     // specify log level
     // it may be convenient if a dog is defined in global field
-    auto dog = watchdog::dog(std::cout, watchdog::level::warning);
+    auto dog = watchdog::dog<watchdog::level::warning>(std::cerr);
 
     dog.yelp("this is information message."); // this message is not logged because of log level
     dog.bow("this is warning message!");
@@ -29,10 +29,10 @@ int main()
 
     dog.bowwow("functions are variadic, like this", foo, bar, baz); // 'functions are variadic, like this 1 a 6' is logged
 
-    // you can add filter
+    // you can add filter (not implemented)
     dog.add_filter("filter name", [](std::string const& s){ return true; });
 
-    // you can add message mapper
+    // you can add message mapper (not implemented)
     dog.add_mapper("mapper name", [](std::string const& s){ return s + "!!!"; });
 
     return 0;
